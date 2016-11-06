@@ -1,31 +1,20 @@
-package MVC;
+package Calculate;
+import java.util.HashMap;
 
 public class Controller {
-	private Model model;
-	private View view;
-
-	   public Controller(Model model, View view){
-	      this.model = model;
-	      this.view = view;
-	   }
-
-	   public void setPlayerName(String Name){
-	      model.setName(Name);		
-	   }
-
-	   public String getPlayerName(){
-	      return model.getName();		
-	   }
-
-	   public void setPlayerNumber(String Number){
-	      model.setNumber(Number);		
-	   }
-
-	   public String getPlayerNumber(){
-	      return model.getNumber();		
-	   }
-
-	   public void updateView(){				
-	      view.printStudentDetails(model.getName(), model.getNumber());
-	    }	
+	public static HashMap<String, doMath> key = new HashMap <String, doMath>();
+	
+	public void Controller(){
+		
+	}
+	
+	public static void handleOperator(String operator, Integer input1, Integer input2){
+		key.put("+", new Addition());
+		key.put("-", new Subtraction());
+		key.put("/", new Division());
+		key.put("*", new Multiplication());
+		
+		doMath handler = key.get(operator);
+		handler.execute(input1, input2);
+	}
 }
