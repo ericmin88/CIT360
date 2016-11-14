@@ -5,4 +5,8 @@ public class Division implements doMath{
 		Integer division = input1 / input2;
 		System.out.println(division);
 	}
+	
+	public int division(int i, int j) {
+		return i / j;
+	}
 }

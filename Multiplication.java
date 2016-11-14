@@ -5,4 +5,8 @@ public class Multiplication implements doMath {
 		Integer multipication = input1 * input2;
 		System.out.println(multipication);
 	}
+	
+	public int multiplication(int i, int j) {
+		return i * j;
+	}
 }
